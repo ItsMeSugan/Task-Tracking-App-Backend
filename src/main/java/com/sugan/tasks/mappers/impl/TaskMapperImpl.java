@@ -3,7 +3,9 @@ package com.sugan.tasks.mappers.impl;
 import com.sugan.tasks.doman.dto.TaskDto;
 import com.sugan.tasks.doman.entities.Task;
 import com.sugan.tasks.mappers.TaskMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TaskMapperImpl implements TaskMapper {
 
   @Override

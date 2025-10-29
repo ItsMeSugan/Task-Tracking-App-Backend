@@ -6,7 +6,6 @@ import com.sugan.tasks.doman.entities.TaskList;
 import com.sugan.tasks.doman.entities.TaskStatus;
 import com.sugan.tasks.mappers.TaskListMapper;
 import com.sugan.tasks.mappers.TaskMapper;
-
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Component;
@@ -47,12 +46,12 @@ public class TaskListMapperImpl implements TaskListMapper {
   }
 
   private Double calculateTaskListProgress(List<Task> tasks) {
-    if (null == tasks) {
-      return null;
+    if (null == tasks || tasks.isEmpty()) {
+      return 0.0;
     }
 
     long closedTaskCount =
         tasks.stream().filter(task -> TaskStatus.CLOSED == task.getStatus()).count();
-    return (double) (closedTaskCount / tasks.size());
+    return (double) closedTaskCount / tasks.size();
   }
 }
