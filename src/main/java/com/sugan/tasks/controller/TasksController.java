@@ -7,8 +7,6 @@ import com.sugan.tasks.service.TaskService;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
-
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
